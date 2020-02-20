@@ -14,5 +14,6 @@ public class Application {
         }
 
 
+        System.out.println("Result: " + (a + b));
     }
 }
