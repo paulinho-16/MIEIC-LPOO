@@ -8,12 +8,11 @@ public class Application {
         int a = scanner.nextInt();
         int b = scanner.nextInt();
 
-        if (operation.equals("sum"))
-        {
-            System.out.println(a + b);
+        if (operation.equals("sum")) {
+            System.out.println("Result: " + (a + b));
         }
-
-
-        System.out.println("Result: " + (a + b));
+        if (operation.equals("mul")) {
+            System.out.println("Result: " + (a * b));
+        }
     }
 }
