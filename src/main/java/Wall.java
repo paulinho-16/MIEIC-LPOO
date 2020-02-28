@@ -1,20 +1,10 @@
 import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.graphics.TextGraphics;
 
-public class Wall {
-    private Position position;
+public class Wall extends Element{
 
-    Wall(int x, int y) {
-        position = new Position(x,y);
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position.setX(position.getX());
-        this.position.setY(position.getY());
+    public Wall(int x, int y) {
+        super(x,y);
     }
 
     public void draw(TextGraphics graphics) {
