@@ -1,3 +1,7 @@
+import com.googlecode.lanterna.TerminalPosition;
+import com.googlecode.lanterna.TerminalSize;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 
@@ -14,15 +18,15 @@ public class Arena {
         hero = new Hero(10, 10);
     }
 
-    public void draw(Screen screen) throws IOException {
-        screen.clear();
-        hero.draw(screen);
-        screen.refresh();
+    public void draw(TextGraphics graphics) throws IOException {
+        graphics.setBackgroundColor(TextColor.Factory.fromString("#336699"));
+        graphics.fillRectangle(new TerminalPosition(0,0), new TerminalSize(width, height), ' ');
+        hero.draw(graphics);
     }
 
     private boolean canHeroMove(Position position) {
-        if (position.getX() > 0 && position.getX() < width) {
-            if (position.getY() > 0 && position.getY() < height)
+        if (position.getX() >= 0 && position.getX() < width) {
+            if (position.getY() >= 0 && position.getY() < height)
                 return true;
         }
         return false;
