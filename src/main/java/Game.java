@@ -35,8 +35,8 @@ public class Game {
         screen.refresh();
     }
 
-    private void processKey(KeyStroke key) {
-        arena.processKey(key);
+    private boolean processKey(KeyStroke key) {
+        return arena.processKey(key);
     }
 
     public void run() throws IOException {
@@ -47,8 +47,10 @@ public class Game {
                 screen.close();
             else if (key.getKeyType() == KeyType.EOF)
                 break;
-            else
-                processKey(key);
+            else if (processKey(key)) {
+                screen.close();
+                System.out.println("\nGame Over\n");
+            }
         }
     }
 }
