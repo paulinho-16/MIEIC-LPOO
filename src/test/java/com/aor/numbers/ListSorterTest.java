@@ -1,5 +1,6 @@
 package com.aor.numbers;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -8,11 +9,12 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class ListSorterTest {
-    private List<Integer> list;
+    //private List<Integer> list;
+    List<Integer> list = new ArrayList();
+    List<Integer> expected = new ArrayList();
 
-    @Test
-    public void sort() {
-        List<Integer> list = new ArrayList();
+    @Before
+    public void helper() {
         list.add(3);
         list.add(2);
         list.add(6);
@@ -20,8 +22,6 @@ public class ListSorterTest {
         list.add(4);
         list.add(5);
         list.add(7);
-
-        List<Integer> expected = new ArrayList();
         expected.add(1);
         expected.add(2);
         expected.add(3);
@@ -29,7 +29,10 @@ public class ListSorterTest {
         expected.add(5);
         expected.add(6);
         expected.add(7);
+    }
 
+    @Test
+    public void sort() {
 
         ListSorter sorter = new ListSorter(list);
         List<Integer> sorted = sorter.sort();

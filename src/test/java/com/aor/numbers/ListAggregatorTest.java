@@ -12,23 +12,17 @@ public class ListAggregatorTest {
 
     List<Integer> list = new ArrayList<>();
 
-    /*@Before
+    @Before
     public void helper() {
         list.add(1);
         list.add(2);
         list.add(4);
         list.add(2);
         list.add(5);
-    }*/
+    }
 
     @Test
     public void sum() {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
 
         ListAggregator aggregator = new ListAggregator(list);
 
@@ -39,12 +33,6 @@ public class ListAggregatorTest {
 
     @Test
     public void max() {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
 
         ListAggregator aggregator = new ListAggregator(list);
 
@@ -55,12 +43,6 @@ public class ListAggregatorTest {
 
     @Test
     public void min() {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
 
         ListAggregator aggregator = new ListAggregator(list);
 
@@ -71,12 +53,6 @@ public class ListAggregatorTest {
 
     @Test
     public void distinct() {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
 
         ListAggregator aggregator = new ListAggregator(list);
 
