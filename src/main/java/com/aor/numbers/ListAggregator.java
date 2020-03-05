@@ -32,11 +32,16 @@ public class ListAggregator {
      */
     public Integer max() {
         int max = 0;
+        boolean inicio = true;
 
-        for (Integer number : list)
+        for (Integer number : list) {
+            if (inicio) {
+                max = number;
+                inicio = false;
+            }
             if (number > max)
                 max = number;
-
+        }
         return max;
     }
 
