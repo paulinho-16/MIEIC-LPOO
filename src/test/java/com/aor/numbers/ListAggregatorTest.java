@@ -12,6 +12,7 @@ public class ListAggregatorTest {
 
     List<Integer> list = new ArrayList<>();
     List<Integer> lista_max = new ArrayList<>();
+    List<Integer> lista_distinct = new ArrayList<>();
 
     @Before
     public void helper() {
@@ -23,6 +24,10 @@ public class ListAggregatorTest {
         lista_max.add(-1);
         lista_max.add(-4);
         lista_max.add(-5);
+        lista_distinct.add(1);
+        lista_distinct.add(2);
+        lista_distinct.add(4);
+        lista_distinct.add(2);
     }
 
     @Test
@@ -62,10 +67,25 @@ public class ListAggregatorTest {
     @Test
     public void distinct() {
 
-        ListAggregator aggregator = new ListAggregator(list);
+        class stubDeduplicate implements IListDeduplicator {
+            @Override
+            public List<Integer> deduplicate() {
+                List<Integer> correctList = new ArrayList<>();
+                correctList.add(1);
+                correctList.add(2);
+                correctList.add(4);
+                return correctList;
+            }
+        }
 
-        int distinct = aggregator.distinct();
+        ListAggregator aggregator = new ListAggregator(list);
+        int distinct = aggregator.distinct(new ListDeduplicator(list));
 
         assertEquals(4, distinct);
+
+        ListAggregator aggregator2 = new ListAggregator(lista_distinct);
+        int distinct2 = aggregator2.distinct(new stubDeduplicate());
+
+        assertEquals(3, distinct2);
     }
 }
