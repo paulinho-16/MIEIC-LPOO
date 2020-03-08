@@ -2,6 +2,7 @@ package com.aor.numbers;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,5 +60,17 @@ public class ListDeduplicatorTest {
         List<Integer> distinct2 = deduplicator2.deduplicate(new stubSort());
 
         assertEquals(lista_bug_esperada, distinct2);
+    }
+
+    @Test
+    public void deduplicateMockito() {
+
+        IListDeduplicator deduplicator = Mockito.mock(IListDeduplicator.class);
+
+        Mockito.when(deduplicator.deduplicate()).thenReturn(lista_bug_esperada);
+
+        List<Integer> distinct = deduplicator.deduplicate();
+
+        assertEquals(lista_bug_esperada, distinct);
     }
 }

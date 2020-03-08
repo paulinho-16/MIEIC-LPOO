@@ -2,6 +2,7 @@ package com.aor.numbers;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class ListAggregatorTest {
     List<Integer> list = new ArrayList<>();
     List<Integer> lista_max = new ArrayList<>();
     List<Integer> lista_distinct = new ArrayList<>();
+    List<Integer> correctList = new ArrayList<>();
 
     @Before
     public void helper() {
@@ -28,6 +30,9 @@ public class ListAggregatorTest {
         lista_distinct.add(2);
         lista_distinct.add(4);
         lista_distinct.add(2);
+        correctList.add(1);
+        correctList.add(2);
+        correctList.add(4);
     }
 
     @Test
@@ -85,6 +90,19 @@ public class ListAggregatorTest {
 
         ListAggregator aggregator2 = new ListAggregator(lista_distinct);
         int distinct2 = aggregator2.distinct(new stubDeduplicate());
+
+        assertEquals(3, distinct2);
+    }
+
+    @Test
+    public void distinctMockito() {
+
+        IListDeduplicator deduplicator = Mockito.mock(IListDeduplicator.class);
+
+        Mockito.when(deduplicator.deduplicate()).thenReturn(correctList);
+
+        ListAggregator aggregator2 = new ListAggregator(lista_distinct);
+        int distinct2 = aggregator2.distinct(deduplicator);
 
         assertEquals(3, distinct2);
     }
