@@ -12,6 +12,7 @@ public class Application {
         Ellipse ellipse = new Ellipse(4,2);
         Rectangle rectangle = new Rectangle(10,5);
         Triangle triangle = new Triangle(6,3);
+        Line line = new Line(7);
 
         aggregator.addShape(circle);
         aggregator.addShape(square);
