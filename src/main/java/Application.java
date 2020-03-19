@@ -1,4 +1,6 @@
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class Application {
         Rectangle rectangle = new Rectangle(10,5);
         Triangle triangle = new Triangle(6,3);
         Line line = new Line(7);
-        House house = new House(150);
+        House house1 = new House(150);
+        House house2 = new House(300);
 
         aggregator.addShape(circle);
         aggregator.addShape(square);
@@ -27,11 +30,24 @@ public class Application {
         aggregator.addArea(ellipse);
         aggregator.addArea(rectangle);
         aggregator.addArea(triangle);
-        aggregator.addArea(house);
+        aggregator.addArea(house1);
+        aggregator.addArea(house2);
 
         aggregator.drawAll();
 
         System.out.println(stringOutputter.output());
         System.out.println(xmlOutputter.output());
+
+        List<House> houses = new ArrayList<>();
+        houses.add(house1);
+        houses.add(house2);
+
+        City city = new City(houses);
+
+        AreaStringOutputter cityStringOutputter = new AreaStringOutputter(city);
+        AreaXMLOutputter cityXmlOutputter = new AreaXMLOutputter(city);
+
+        System.out.println(cityStringOutputter.output());
+        System.out.println(cityXmlOutputter.output());
     }
 }
