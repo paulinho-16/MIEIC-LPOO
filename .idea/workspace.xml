@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b333e8a3-d322-49ce-a7b9-612345fa0a8b" name="Default Changelist" comment="" />
+    <list default="true" id="b333e8a3-d322-49ce-a7b9-612345fa0a8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aor/refactoring/example1/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aor/refactoring/example1/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aor/refactoring/example1/OrderLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aor/refactoring/example1/OrderLine.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +23,11 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZzgOuMFYzauq7ErDJDtEqivKcZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -20,10 +35,38 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tests in 'refactoring.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests *" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Tests in 'refactoring.test'" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,8 +78,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585847307604</updated>
-      <workItem from="1585847310159" duration="10000" />
+      <workItem from="1585847310159" duration="3997000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1261" height="175" key="GridCell.Tab.0.bottom" timestamp="1585851411352">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="175" key="GridCell.Tab.0.bottom/59.27.1307.741@59.27.1307.741" timestamp="1585851411352" />
+    <state width="1261" height="175" key="GridCell.Tab.0.center" timestamp="1585851411352">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="175" key="GridCell.Tab.0.center/59.27.1307.741@59.27.1307.741" timestamp="1585851411352" />
+    <state width="1261" height="175" key="GridCell.Tab.0.left" timestamp="1585851411351">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="175" key="GridCell.Tab.0.left/59.27.1307.741@59.27.1307.741" timestamp="1585851411351" />
+    <state width="1261" height="175" key="GridCell.Tab.0.right" timestamp="1585851411352">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="175" key="GridCell.Tab.0.right/59.27.1307.741@59.27.1307.741" timestamp="1585851411352" />
   </component>
 </project>
