@@ -6,26 +6,38 @@ import java.util.Date;
 import java.util.List;
 
 public class Tree {
-    public Date plantedAt;
-    public String locationLatitude;
-    public String locationLongitude;
-    public String locationName;
+    private Date plantedAt;
+    private Location location;
     private List<Date> appraisalDates;
 
     public Tree(Date plantedAt, String locationLatitude, String locationLongitude, String locationName){
         this.plantedAt = plantedAt;
-        this.setLocation(locationLatitude, locationLongitude, locationName);
+        this.location = new Location(locationLatitude, locationLongitude, locationName);
         this.appraisalDates = new ArrayList<>();
     }
 
-    public void setLocation(String locationLatitude, String locationLongitude, String locationName){
-        this.locationLatitude = locationLatitude;
-        this.locationLongitude = locationLongitude;
-        this.locationName = locationName;
+    public Date getPlantedAt() {
+        return plantedAt;
+    }
+
+    public String getLocationLatitude() {
+        return location.getLatitude();
+    }
+
+    public String getLocationLongitude() {
+        return location.getLongitude();
+    }
+
+    public String getLocationName() {
+        return location.getName();
+    }
+
+    public void setLocation(String latitude, String longitude, String name) {
+        location = new Location(latitude, longitude, name);
     }
 
     public String toString() {
-        return "Tree planted at " + this.plantedAt.toString() + " in location " + this.locationLatitude + "," + this.locationLongitude + " (" + this.locationName + ")";
+        return "Tree planted at " + this.plantedAt.toString() + " in location " + location.toString();
     }
 
     void addAppraisal(Date appraisalDate) {
@@ -36,20 +48,7 @@ public class Tree {
         return this.appraisalDates;
     }
 
-    public boolean isNextAppraisalOverdue(){
-        Date today = new Date();
-        Date latestAppraisalDate = today;
-
-        if (this.appraisalDates.size() > 0) {
-            latestAppraisalDate = this.appraisalDates.get(0);
-        }
-        for(Date appraisalDate : this.appraisalDates) {
-            if (latestAppraisalDate.before(appraisalDate)) {
-                latestAppraisalDate = appraisalDate;
-            }
-        }
-
-        // Calculate next appraisal date
+    public Date getNextAppraisalDate(Date latestAppraisalDate) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(latestAppraisalDate);
         calendar.add(Calendar.MONTH, 3);
@@ -59,8 +58,24 @@ public class Tree {
         else if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY)
             calendar.add(Calendar.DAY_OF_MONTH, 2);
 
-        Date nextAppraisalDate = calendar.getTime();
-        // Appraisal is only overdue if its date is in the past
+        return calendar.getTime();
+    }
+
+    public Date getLatestAppraisalDate(Date today) {
+        Date latestAppraisalDate = appraisalDates.size() > 0 ? appraisalDates.get(0) : today;
+
+        for (Date appraisalDate : appraisalDates) {
+            if (latestAppraisalDate.before(appraisalDate))
+                latestAppraisalDate = appraisalDate;
+        }
+
+        return latestAppraisalDate;
+    }
+
+    public boolean isNextAppraisalOverdue(){
+        Date today = new Date();
+        Date latestAppraisalDate = getLatestAppraisalDate(today);
+        Date nextAppraisalDate = getNextAppraisalDate(latestAppraisalDate);
         return nextAppraisalDate.before(today);
     }
 }
