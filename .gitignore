@@ -23,6 +23,8 @@
 hs_err_pid*
 
 # IntelliJ
-out/
 .idea/
+.gradle/
+out/
+build/
 *.iml
