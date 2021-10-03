@@ -28,7 +28,7 @@ De seguida, apresentamos algumas imagens ilustrativas do nosso jogo.
 
  ## Criadores
 
- * Paulo Ribeiro - up201806505 ([PJscp16](https://github.com/paulinho-16))
+ * Paulo Ribeiro - up201806505 ([paulinho-16](https://github.com/paulinho-16))
   
  * Pedro Ferreira - up201806506 ([pdff2000](https://github.com/pdff2000))
 
